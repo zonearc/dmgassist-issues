@@ -1,0 +1,31 @@
+name: Bug report
+description: Something DMGAssist does wrong (a wrong or missing recommendation, an error, a setting that doesn't work).
+labels: ["bug", "untriaged"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! In game, right after the problem: type `/dmga report` (or right-click the minimap
+        button → **Report an issue**), write what went wrong, press **Ctrl+C**, and paste it below.
+        Your words and the report come along together. (Needs DMGAssist_Watchdog, which ships next to DMGAssist.)
+  - type: textarea
+    id: report
+    attributes:
+      label: Your report
+      description: "Paste what you copied from the Report an issue window (your words, then a long line starting with DMGW1:)."
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: Anything else? (optional)
+      description: If you didn't write it in the game window, say what happened and what you expected. Screenshots help.
+      placeholder: "Balance druid, 5 dummies: it kept showing Starfire while Eclipse was ready."
+  - type: dropdown
+    id: game
+    attributes:
+      label: Game
+      options:
+        - Midnight (retail)
+        - WoW Forever
